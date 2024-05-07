@@ -6,13 +6,13 @@ const Header = () => {
     return (
         <View style={{
             backgroundColor: "#003580",
-            height: 65,
+            height: 20,
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-around"
         }}
         >
-            <Pressable style={{
+{/*            <Pressable style={{
                 flexDirection: "row",
                 alignItems: "center",
                 borderColor: "white",
@@ -27,7 +27,7 @@ const Header = () => {
                     color: "white",
                     fontSize: 15
                 }}>Studios</Text>
-            </Pressable>
+            </Pressable> */}
         </View>
     )
 }
