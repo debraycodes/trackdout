@@ -5,11 +5,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './screens/HomeScreen'
 import BookingScreen from './screens/BookingScreen'
 import ProfileScreen from './screens/ProfileScreen'
-import SavedScreen from './screens/SavedScreen'
-import { AntDesign } from '@expo/vector-icons'
-import { Entypo } from '@expo/vector-icons'
-import { Ionicons } from '@expo/vector-icons'
+import MessagesScreen from './screens/MessagesScreen'
+import { FontAwesome, MaterialCommunityIcons, Ionicons, AntDesign } from '@expo/vector-icons'
 import { NavigationContainer } from '@react-navigation/native'
+
+const SearchScreen = HomeScreen
 
 const StackNavigator = () => {
     const Tab = createBottomTabNavigator()
@@ -19,28 +19,15 @@ const StackNavigator = () => {
         return (
             <Tab.Navigator>
                 <Tab.Screen 
-                    name="Home" 
-                    component={HomeScreen} 
+                    name="Search" 
+                    component={SearchScreen} 
                     options={{
-                        tabBarLabel:"Home", 
+                        tabBarLabel:"Search", 
                         headerShown:false, tabBarIcon:({focused}) => 
                             focused ? (
-                                    <Entypo name="home" size={24} color="#003580" />
+                                    <FontAwesome name="search" size={24} color="#003580" />
                                 ) : (
-                                    <AntDesign name="home" size={24} color="black" />
-                                )
-                    }}
-                />
-                <Tab.Screen 
-                    name="Saved" 
-                    component={SavedScreen} 
-                    options={{
-                        tabBarLabel:"Saved", 
-                        headerShown:false, tabBarIcon:({focused}) => 
-                            focused ? (
-                                    <AntDesign name="heart" size={24} color="#003580" />
-                                ) : (
-                                    <AntDesign name="hearto" size={24} color="black" />
+                                    <FontAwesome name="search" size={24} color="#B2BEB5" />
                                 )
                     }}
                 />
@@ -51,9 +38,9 @@ const StackNavigator = () => {
                         tabBarLabel:"Bookings", 
                         headerShown:false, tabBarIcon:({focused}) => 
                             focused ? (
-                                    <Ionicons name="notifications" size={24} color="#003580" />
+                                    <MaterialCommunityIcons name="calendar-star" size={24} color="#003580" />
                                 ) : (
-                                    <Ionicons name="notifications-outline" size={24} color="black" />
+                                    <MaterialCommunityIcons name="calendar-star" size={24} color="#B2BEB5" />
                                 )
                     }}
                 />
@@ -66,7 +53,20 @@ const StackNavigator = () => {
                             focused ? (
                                     <Ionicons name="person" size={24} color="#003580" />
                                 ) : (
-                                    <Ionicons name="person-outline" size={24} color="black" />
+                                    <Ionicons name="person-outline" size={24} color="#B2BEB5" />
+                                )
+                    }}
+                />
+                <Tab.Screen 
+                    name="Messages" 
+                    component={MessagesScreen} 
+                    options={{
+                        tabBarLabel:"Messages", 
+                        headerShown:false, tabBarIcon:({focused}) => 
+                            focused ? (
+                                    <Ionicons name="mail-sharp" size={24} color="#003580" />
+                                ) : (
+                                    <Ionicons name="mail-outline" size={24} color="#B2BEB5" />
                                 )
                     }}
                 />
