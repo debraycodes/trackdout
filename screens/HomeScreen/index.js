@@ -3,7 +3,7 @@ import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Ionicons } from '@expo/vector-icons'
 import { Feather } from '@expo/vector-icons'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 // import DateTimePicker from '@react-native-community/datetimepicker'
 // import Geolocation from '@react-native-community/geolocation';
 // import { BottomModal, ModalButton, ModalFooter, SlideAnimation, ModalContent, ModalTitle } from 'react-native-modals'
@@ -37,7 +37,7 @@ const HomeScreen = () => {
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: true,
-            title: "TrackdOut",
+            title: "Search",
             headerTitleStyle: {
                 fontSize: 20,
                 fontWeight: "bold",
@@ -51,7 +51,7 @@ const HomeScreen = () => {
                 shadowColor: "transparent"
             },
             headerRight: () => (
-                <Ionicons name="notifications-outline" size={24} color="white" style={{ marginRight: 12 }} />
+                <Feather name="map" size={24} color="white" style={{ marginRight: 18 }} />
             )
         })
     }, [])
@@ -61,10 +61,9 @@ const HomeScreen = () => {
                 <Header />
                 <ScrollView>
                     <View style={{
-                        margin: 20,
                         borderColor: "#003580",
                         borderWidth: 3,
-                        borderRadius: 6
+                        borderRadius: 5
                     }}>
                         {/* Destination */}
                         <Pressable style={{
@@ -82,20 +81,6 @@ const HomeScreen = () => {
                                 onChangeText={onChangeSearchLocation}
                                 value={searchLocation}
                             />
-                        </Pressable>
-                        <Pressable style={{
-                            paddingHorizontal: 10,
-                            borderColor: "#003580",
-                            borderWidth: 2,
-                            paddingVertical: 15,
-                            backgroundColor: "#2a52be"
-                        }}>
-                            <Text style={{
-                                textAlign: "center",
-                                fontSize: 20,
-                                fontWeight: "500",
-                                color: "white"
-                            }}>Search</Text>
                         </Pressable>
                     </View>
                     <Text style={{
